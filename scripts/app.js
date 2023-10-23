@@ -1,5 +1,6 @@
 const log = console.log;
-const userLibrary = [];
+const userLibraryArray = [];
+const userLibrary = document.querySelector("#user-library");
 
 function Book(title, author, pages = 0, finishedReading = false) {
   (this.title = title),
@@ -12,10 +13,22 @@ function addBookToLibrary(array, book) {
   array.push(book);
 }
 
+function insertBooks(array, element) {
+  array.forEach((ele) => {
+    element.insertAdjacentHTML(
+      "beforeend",
+      `<li>${ele.title}, ${ele.author}, ${ele.pages}, ${ele.finishedReading}</li>`
+    );
+  });
+}
+
 const book1 = new Book("The Shining", "Stephen King");
 const book2 = new Book("Lord of the Rings", "Tolkien", 300, true);
 
-addBookToLibrary(userLibrary, book1);
-addBookToLibrary(userLibrary, book2);
+addBookToLibrary(userLibraryArray, book1);
+addBookToLibrary(userLibraryArray, book2);
 
+log(userLibraryArray);
 log(userLibrary);
+
+insertBooks(userLibraryArray, userLibrary);
