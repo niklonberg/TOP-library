@@ -9,8 +9,8 @@
   <body>
     <ul id="user-library"></ul>
     <button id="add-book-btn">Add book</button>
-    <dialog id="new-book-modal" open>
-      <form action="">
+    <dialog id="new-book-modal">
+      <form action="" id="book-form">
         <h2>Add new book</h2>
         <label for="book-title">Title</label>
         <input type="text" name="title" id="book-title" />
@@ -33,6 +33,7 @@
         <button id="close-book-modal" type="button" aria-label="Close Modal">
           X
         </button>
+        <button type="submit">Add book</button>
       </form>
     </dialog>
     <script type="module" src="scripts/app.js"></script>

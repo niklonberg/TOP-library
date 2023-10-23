@@ -3,6 +3,7 @@ const userLibraryArray = [];
 const userLibrary = document.querySelector("#user-library");
 const addBookBtn = document.querySelector("#add-book-btn");
 const bookModal = document.querySelector("#new-book-modal");
+const bookForm = document.querySelector("#book-form");
 const closeBookModalBtn = document.querySelector("#close-book-modal");
 
 function Book(title, author, pages = 0, finishedReading = false) {
@@ -39,6 +40,21 @@ insertBooks(userLibraryArray, userLibrary);
 addBookBtn.addEventListener("click", () => {
   log("clicked");
   bookModal.showModal();
+});
+
+bookForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  log("i submitted");
+
+  const newBook = new Book(
+    bookForm.elements.title.value,
+    bookForm.elements.author.value
+  );
+
+  addBookToLibrary(userLibraryArray, newBook);
+  insertBooks(userLibraryArray, userLibrary);
+
+  bookModal.close();
 });
 
 closeBookModalBtn.addEventListener("click", () => {
