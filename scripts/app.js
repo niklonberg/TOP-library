@@ -9,9 +9,6 @@ const LibraryManager = new Library();
 const book1 = new Book("The Shining", "Stephen King");
 const book2 = new Book("Lord of the Rings", "Tolkien", 300, true);
 
-/* library instantiation */
-const userLibrary = [];
-
 /* dom element references */
 const userLibraryDisplay = document.querySelector("#user-library");
 const bookModal = document.querySelector("#new-book-modal");
@@ -19,11 +16,7 @@ const bookForm = document.querySelector("#book-form");
 const addBookBtn = document.querySelector("#add-book-btn");
 const closeBookModalBtn = document.querySelector("#close-book-modal");
 
-LibraryManager.addBookToLibrary(userLibrary, book1);
-LibraryManager.addBookToLibrary(userLibrary, book2);
-
-LibraryManager.populateLibraryDisplay(userLibrary, userLibraryDisplay);
-
+/* event listeners */
 bookForm.addEventListener("submit", (event) => {
   event.preventDefault();
   log(bookForm.elements);
@@ -47,3 +40,9 @@ addBookBtn.addEventListener("click", () => {
 closeBookModalBtn.addEventListener("click", () => {
   bookModal.close();
 });
+
+/* library instantiation */
+const userLibrary = [];
+LibraryManager.addBookToLibrary(userLibrary, book1);
+LibraryManager.addBookToLibrary(userLibrary, book2);
+LibraryManager.populateLibraryDisplay(userLibrary, userLibraryDisplay);
