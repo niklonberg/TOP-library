@@ -9,7 +9,11 @@ export default class BookForm {
     const bookObj = {};
 
     bookFormInputs.forEach((ele) => {
-      bookObj[ele.name] = ele.value;
+      if (ele.type === "checkbox") {
+        bookObj[ele.name] = ele.checked;
+      } else {
+        bookObj[ele.name] = ele.value;
+      }
     });
 
     return bookObj;

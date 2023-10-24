@@ -31,14 +31,14 @@ bookForm.addEventListener("submit", (event) => {
   log(bookForm.elements);
   const newBookObj = BookForm.formCreateBookObj(bookForm.elements);
   log(newBookObj);
-  /* const newBook = new Book(newBookObj);
+  const newBook = new Book(newBookObj);
 
   LibraryManager.addBookToLibrary(userLibrary, newBook);
   LibraryManager.insertLatestBook(newBook, userLibraryDisplay);
 
   log(newBook);
   bookForm.reset();
-  bookModal.close(); */
+  bookModal.close();
 });
 
 addBookBtn.addEventListener("click", () => {
