@@ -12,13 +12,12 @@ const closeBookModalBtn = document.querySelector("#close-book-modal");
 const book1 = new Book("The Shining", "Stephen King");
 const book2 = new Book("Lord of the Rings", "Tolkien", 300, true);
 
-addBookToLibrary(userLibraryArray, book1);
-addBookToLibrary(userLibraryArray, book2);
+book1.addBookToLibrary(userLibraryArray);
+book2.addBookToLibrary(userLibraryArray);
 
 log(userLibraryArray);
-log(userLibrary);
 
-insertBooks(userLibraryArray, userLibrary);
+Book.insertBooks(userLibraryArray, userLibrary);
 
 addBookBtn.addEventListener("click", () => {
   bookModal.showModal();

@@ -6,8 +6,8 @@ export default class Book {
       (this.finishedReading = finishedReading);
   }
 
-  addBookToLibrary(array, book) {
-    array.push(book);
+  addBookToLibrary(array) {
+    array.push(this);
   }
 
   insertBooks(array, element) {
