@@ -13,16 +13,16 @@ const book2 = new Book("Lord of the Rings", "Tolkien", 300, true);
 const userLibrary = [];
 
 /* dom element references */
-const userLibraryColl = document.querySelector("#user-library");
-const addBookBtn = document.querySelector("#add-book-btn");
+const userLibraryDisplay = document.querySelector("#user-library");
 const bookModal = document.querySelector("#new-book-modal");
 const bookForm = document.querySelector("#book-form");
+const addBookBtn = document.querySelector("#add-book-btn");
 const closeBookModalBtn = document.querySelector("#close-book-modal");
 
 book1.addBookToLibrary(userLibrary);
 book2.addBookToLibrary(userLibrary);
 
-LibraryManager.insertBooks(userLibrary, userLibraryColl);
+LibraryManager.insertBooks(userLibrary, userLibraryDisplay);
 
 addBookBtn.addEventListener("click", () => {
   bookModal.showModal();
@@ -38,7 +38,7 @@ bookForm.addEventListener("submit", (event) => {
   );
 
   addBookToLibrary(userLibrary, newBook);
-  insertBooks(userLibrary, userLibraryColl);
+  insertBooks(userLibrary, userLibraryDisplay);
 
   bookModal.close();
 });
