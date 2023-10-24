@@ -9,13 +9,4 @@ export default class Book {
   addBookToLibrary(array) {
     array.push(this);
   }
-
-  insertBooks(array, element) {
-    array.forEach((ele) => {
-      element.insertAdjacentHTML(
-        "beforeend",
-        `<li>${ele.title}, ${ele.author}, ${ele.pages}, ${ele.finishedReading}</li>`
-      );
-    });
-  }
 }

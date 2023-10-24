@@ -1,6 +1,9 @@
 const log = console.log;
 
 import Book from "./Book.js";
+import Library from "./LibraryManager.js";
+
+const LibraryManager = new Library();
 
 const userLibraryArray = [];
 const userLibrary = document.querySelector("#user-library");
@@ -15,9 +18,7 @@ const book2 = new Book("Lord of the Rings", "Tolkien", 300, true);
 book1.addBookToLibrary(userLibraryArray);
 book2.addBookToLibrary(userLibraryArray);
 
-log(userLibraryArray);
-
-Book.insertBooks(userLibraryArray, userLibrary);
+LibraryManager.insertBooks(userLibraryArray, userLibrary);
 
 addBookBtn.addEventListener("click", () => {
   bookModal.showModal();
