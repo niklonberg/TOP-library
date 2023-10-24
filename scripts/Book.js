@@ -4,14 +4,4 @@ export default class Book {
       this[key] = bookObj[key];
     }
   }
-
-  tempMethod() {
-    const bookFormElementsArray = [bookFormEleCollection.elements];
-    bookFormElementsArray.forEach((ele) => {
-      console.log(ele);
-      /* if (ele.type === "input") {
-        return;
-      } */
-    });
-  }
 }

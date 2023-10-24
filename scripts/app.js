@@ -3,9 +3,11 @@ const log = console.log;
 /* imports */
 import Book from "./Book.js";
 import Library from "./LibraryManager.js";
+import BookForm from "./FormManager.js";
 
 /* class instantiation */
 const LibraryManager = new Library();
+
 const book1 = new Book({ title: "The Shining", author: "Stephen King" });
 const book2 = new Book({
   title: "Lord of the Rings",
@@ -27,17 +29,16 @@ const closeBookModalBtn = document.querySelector("#close-book-modal");
 bookForm.addEventListener("submit", (event) => {
   event.preventDefault();
   log(bookForm.elements);
-
-  const newBook = new Book(
-    bookForm.elements.title.value,
-    bookForm.elements.author.value
-  );
+  const newBookObj = BookForm.formCreateBookObj(bookForm.elements);
+  log(newBookObj);
+  /* const newBook = new Book(newBookObj);
 
   LibraryManager.addBookToLibrary(userLibrary, newBook);
   LibraryManager.insertLatestBook(newBook, userLibraryDisplay);
 
+  log(newBook);
   bookForm.reset();
-  bookModal.close();
+  bookModal.close(); */
 });
 
 addBookBtn.addEventListener("click", () => {
