@@ -6,8 +6,15 @@ import Library from "./LibraryManager.js";
 
 /* class instantiation */
 const LibraryManager = new Library();
-const book1 = new Book("The Shining", "Stephen King");
-const book2 = new Book("Lord of the Rings", "Tolkien", 300, true);
+const book1 = new Book({ title: "The Shining", author: "Stephen King" });
+const book2 = new Book({
+  title: "Lord of the Rings",
+  author: "Tolkien",
+  pages: 300,
+  finishedReading: true,
+});
+log(book1);
+log(book2);
 
 /* dom element references */
 const userLibraryDisplay = document.querySelector("#user-library");
