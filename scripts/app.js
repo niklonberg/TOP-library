@@ -19,14 +19,10 @@ const bookForm = document.querySelector("#book-form");
 const addBookBtn = document.querySelector("#add-book-btn");
 const closeBookModalBtn = document.querySelector("#close-book-modal");
 
-book1.addBookToLibrary(userLibrary);
-book2.addBookToLibrary(userLibrary);
+LibraryManager.addBookToLibrary(userLibrary, book1);
+LibraryManager.addBookToLibrary(userLibrary, book2);
 
 LibraryManager.insertBooks(userLibrary, userLibraryDisplay);
-
-addBookBtn.addEventListener("click", () => {
-  bookModal.showModal();
-});
 
 bookForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -37,10 +33,13 @@ bookForm.addEventListener("submit", (event) => {
     bookForm.elements.author.value
   );
 
-  addBookToLibrary(userLibrary, newBook);
-  insertBooks(userLibrary, userLibraryDisplay);
+  userLibrary.addBookToLibrary(userLibrary, newBook);
 
   bookModal.close();
+});
+
+addBookBtn.addEventListener("click", () => {
+  bookModal.showModal();
 });
 
 closeBookModalBtn.addEventListener("click", () => {

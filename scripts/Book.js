@@ -5,8 +5,4 @@ export default class Book {
       (this.pages = pages),
       (this.finishedReading = finishedReading);
   }
-
-  addBookToLibrary(library) {
-    library.push(this);
-  }
 }
