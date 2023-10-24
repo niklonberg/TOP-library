@@ -22,7 +22,7 @@ const closeBookModalBtn = document.querySelector("#close-book-modal");
 LibraryManager.addBookToLibrary(userLibrary, book1);
 LibraryManager.addBookToLibrary(userLibrary, book2);
 
-LibraryManager.insertBooks(userLibrary, userLibraryDisplay);
+LibraryManager.populateLibraryDisplay(userLibrary, userLibraryDisplay);
 
 bookForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -33,7 +33,8 @@ bookForm.addEventListener("submit", (event) => {
     bookForm.elements.author.value
   );
 
-  userLibrary.addBookToLibrary(userLibrary, newBook);
+  LibraryManager.addBookToLibrary(userLibrary, newBook);
+  LibraryManager.insertLatestBook(newBook, userLibraryDisplay);
 
   bookModal.close();
 });

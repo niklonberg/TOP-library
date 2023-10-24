@@ -6,14 +6,16 @@ export default class Library {
   populateLibraryDisplay(library, element) {
     element.innerHTML = "";
     library.forEach((book) => {
-      element.insertAdjacentHTML(
-        "beforeend",
-        `<li>${book.title}, ${book.author}, ${book.pages}, ${book.finishedReading}</li>`
-      );
+      this.insertLatestBook(book, element);
     });
   }
 
-  insertLatestBook(library, book) {}
+  insertLatestBook(book, element) {
+    element.insertAdjacentHTML(
+      "beforeend",
+      `<li>${book.title}, ${book.author}, ${book.pages}, ${book.finishedReading}</li>`
+    );
+  }
 
   addBookToLibrary(library, book) {
     library.push(book);
