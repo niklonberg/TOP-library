@@ -36,6 +36,7 @@ bookForm.addEventListener("submit", (event) => {
   LibraryManager.addBookToLibrary(userLibrary, newBook);
   LibraryManager.insertLatestBook(newBook, userLibraryDisplay);
 
+  bookForm.reset();
   bookModal.close();
 });
 
