@@ -11,9 +11,13 @@ export default class Library {
   }
 
   insertLatestBook(book, element) {
+    /* needs to only add key values that have a value */
     element.insertAdjacentHTML(
       "beforeend",
-      `<li>${book.title}, ${book.author}, ${book.pages}, ${book.finishedReading}</li>`
+      `<li>
+        <h3>${book.title}</h3>
+        ${book.author}, ${book.pages}, ${book.finishedReading}
+      </li>`
     );
   }
 

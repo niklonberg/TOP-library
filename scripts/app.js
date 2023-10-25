@@ -17,6 +17,7 @@ const book2 = new Book({
 });
 log(book1);
 log(book2);
+log(book1.filterUndefinedKeys());
 
 /* dom element references */
 const userLibraryDisplay = document.querySelector("#user-library");
@@ -28,10 +29,10 @@ const closeBookModalBtn = document.querySelector("#close-book-modal");
 /* event listeners */
 bookForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  log(bookForm.elements);
+
   const newBookObj = BookForm.formCreateBookObj(bookForm.elements);
-  log(newBookObj);
   const newBook = new Book(newBookObj);
+  log(newBook);
 
   LibraryManager.addBookToLibrary(userLibrary, newBook);
   LibraryManager.insertLatestBook(newBook, userLibraryDisplay);

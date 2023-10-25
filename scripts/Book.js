@@ -4,4 +4,17 @@ export default class Book {
       this[key] = bookObj[key];
     }
   }
+
+  filterUndefinedKeys() {
+    return Object.keys(this).filter((key) => this[key] !== undefined);
+  }
+
+  createHTMLElements() {
+    const templateString = "";
+
+    for (const key in bookObj) {
+      if (bookObj[key] !== undefined) {
+      }
+    }
+  }
 }
