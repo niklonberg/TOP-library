@@ -7,7 +7,10 @@ export default class Library {
     bookCollection.push(book);
   }
 
-  deleteBook() {}
+  deleteBook(bookCollection, dataID) {
+    /* save deleted book so it can be undone? */
+    bookCollection.splice(dataID, 1);
+  }
 
   showCurrentBookCollection(bookCollection, element) {
     element.innerHTML = "";
@@ -32,6 +35,4 @@ export default class Library {
   insertLatestBookCard(bookCollection, element) {
     this.insertBookCard(bookCollection.at(-1), element);
   }
-
-  removeBookCard() {}
 }

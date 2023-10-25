@@ -32,8 +32,12 @@ const closeBookModalBtn = document.querySelector("#close-book-modal");
 currentCollectionDisplay.addEventListener("click", (event) => {
   log(event);
   if (event.target.classList.contains("remove-book-btn")) {
+    const parent = event.target.parentElement;
     log("you clicked the delete btn");
-    log(event.target.parentElement);
+    log("dataset id: ", parent.dataset.id);
+    LibraryManager.deleteBook(userLibrary, parent.dataset.id);
+    log(userLibrary);
+    parent.remove();
   }
 });
 
