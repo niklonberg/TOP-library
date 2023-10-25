@@ -13,7 +13,9 @@ const book2 = new Book({
   title: "Lord of the Rings",
   author: "Tolkien",
   pages: 300,
-  finishedReading: true,
+  language: "English",
+  publishedDate: "10-01-1992",
+  finishedReading: false,
 });
 log(book1);
 log(book2);
@@ -32,7 +34,6 @@ bookForm.addEventListener("submit", (event) => {
 
   const newBookObj = BookForm.formCreateBookObj(bookForm.elements);
   const newBook = new Book(newBookObj);
-  log(newBook);
 
   LibraryManager.addBookToLibrary(userLibrary, newBook);
   LibraryManager.insertLatestBook(newBook, userLibraryDisplay);
