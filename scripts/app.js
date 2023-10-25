@@ -31,8 +31,9 @@ const closeBookModalBtn = document.querySelector("#close-book-modal");
 /* event listeners */
 currentCollectionDisplay.addEventListener("click", (event) => {
   log(event);
-  if (event.target.className === "remove-book-btn") {
+  if (event.target.classList.contains("remove-book-btn")) {
     log("you clicked the delete btn");
+    log(event.target.parentElement);
   }
 });
 
@@ -42,8 +43,8 @@ bookForm.addEventListener("submit", (event) => {
   const newBookObj = BookForm.formCreateBookObj(bookForm.elements);
   const newBook = new Book(newBookObj);
 
-  LibraryManager.addBookToBookCollection(userLibrary, newBook);
-  LibraryManager.insertLatestBook(userLibrary, userLibraryDisplay);
+  LibraryManager.addBook(userLibrary, newBook);
+  LibraryManager.insertLatestBookCard(userLibrary, currentCollectionDisplay);
 
   log(newBook);
   log(userLibrary);
@@ -61,7 +62,7 @@ closeBookModalBtn.addEventListener("click", () => {
 
 /* library instantiation */
 const userLibrary = [];
-LibraryManager.addBookToBookCollection(userLibrary, book1);
-LibraryManager.addBookToBookCollection(userLibrary, book2);
+LibraryManager.addBook(userLibrary, book1);
+LibraryManager.addBook(userLibrary, book2);
 LibraryManager.showCurrentBookCollection(userLibrary, currentCollectionDisplay);
 log(Book.numberOfBooks);

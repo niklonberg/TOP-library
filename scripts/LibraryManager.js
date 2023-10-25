@@ -3,12 +3,24 @@ export default class Library {
     this.bookCollections = {};
   }
 
+  addBook(bookCollection, book) {
+    bookCollection.push(book);
+  }
+
+  deleteBook() {}
+
   showCurrentBookCollection(bookCollection, element) {
     element.innerHTML = "";
     this.insertBookCollection(bookCollection, element);
   }
 
-  insertBook(book, element) {
+  insertBookCollection(bookCollection, element) {
+    bookCollection.forEach((book) => {
+      this.insertBookCard(book, element);
+    });
+  }
+
+  insertBookCard(book, element) {
     element.insertAdjacentHTML(
       "beforeend",
       `<li data-id=${book.bookID}>
@@ -17,17 +29,9 @@ export default class Library {
     );
   }
 
-  insertBookCollection(bookCollection, element) {
-    bookCollection.forEach((book) => {
-      this.insertBook(book, element);
-    });
+  insertLatestBookCard(bookCollection, element) {
+    this.insertBookCard(bookCollection.at(-1), element);
   }
 
-  insertLatestBook(bookCollection, element) {
-    this.insertBook(bookCollection.at(-1), element);
-  }
-
-  addBookToBookCollection(bookCollection, book) {
-    bookCollection.push(book);
-  }
+  removeBookCard() {}
 }
