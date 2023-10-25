@@ -1,8 +1,11 @@
 export default class Book {
+  static numberOfBooks = 0; /* needed? */
+
   constructor(bookObj) {
     for (const key in bookObj) {
       this[key] = bookObj[key];
     }
+    Book.numberOfBooks++; /* needed? */
   }
 
   filterUndefinedKeys() {
@@ -31,6 +34,9 @@ export default class Book {
       const value = this[key];
       templateString += propertyConfig[key](value);
     }
+
+    const deleteBookBtn = `<button class="remove-book">Delete</button>`;
+    templateString += deleteBookBtn;
 
     return templateString;
   }

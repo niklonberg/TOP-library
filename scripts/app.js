@@ -36,7 +36,7 @@ bookForm.addEventListener("submit", (event) => {
   const newBook = new Book(newBookObj);
 
   LibraryManager.addBookToLibrary(userLibrary, newBook);
-  LibraryManager.insertLatestBook(newBook, userLibraryDisplay);
+  LibraryManager.insertBookCollection(userLibrary, userLibraryDisplay);
 
   log(newBook);
   bookForm.reset();
@@ -53,6 +53,7 @@ closeBookModalBtn.addEventListener("click", () => {
 
 /* library instantiation */
 const userLibrary = [];
-LibraryManager.addBookToLibrary(userLibrary, book1);
-LibraryManager.addBookToLibrary(userLibrary, book2);
-LibraryManager.populateLibraryDisplay(userLibrary, userLibraryDisplay);
+LibraryManager.addBookToBookCollection(userLibrary, book1);
+LibraryManager.addBookToBookCollection(userLibrary, book2);
+LibraryManager.showCurrentBookCollection(userLibrary, userLibraryDisplay);
+log(Book.numberOfBooks);

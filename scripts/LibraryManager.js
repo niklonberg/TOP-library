@@ -3,23 +3,27 @@ export default class Library {
     this.bookCollections = {};
   }
 
-  populateLibraryDisplay(library, element) {
+  showCurrentBookCollection(bookCollection, element) {
     element.innerHTML = "";
-    library.forEach((book) => {
-      this.insertLatestBook(book, element);
-    });
+    this.insertBookCollection(bookCollection, element);
   }
 
-  insertLatestBook(book, element) {
-    element.insertAdjacentHTML(
-      "beforeend",
-      `<li>
-        ${book.createHTMLElements()}
-      </li>`
-    );
+  insertBookCollection(bookCollection, element) {
+    for (let i = 0; i < bookCollection.length; i++) {
+      element.insertAdjacentHTML(
+        "beforeend",
+        `<li data-id=${i}>
+          ${bookCollection[i].createHTMLElements()}
+        </li>`
+      );
+    }
   }
 
-  addBookToLibrary(library, book) {
-    library.push(book);
+  /*   removeBook() {
+
+  } */
+
+  addBookToBookCollection(bookCollection, book) {
+    bookCollection.push(book);
   }
 }
