@@ -22,13 +22,20 @@ log(book2);
 log(book1.filterUnwantedKeys());
 
 /* dom element references */
-const userLibraryDisplay = document.querySelector("#user-library");
+const currentCollectionDisplay = document.querySelector("#book-display");
 const bookModal = document.querySelector("#new-book-modal");
 const bookForm = document.querySelector("#book-form");
 const addBookBtn = document.querySelector("#add-book-btn");
 const closeBookModalBtn = document.querySelector("#close-book-modal");
 
 /* event listeners */
+currentCollectionDisplay.addEventListener("click", (event) => {
+  log(event);
+  if (event.target.className === "remove-book-btn") {
+    log("you clicked the delete btn");
+  }
+});
+
 bookForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -56,5 +63,5 @@ closeBookModalBtn.addEventListener("click", () => {
 const userLibrary = [];
 LibraryManager.addBookToBookCollection(userLibrary, book1);
 LibraryManager.addBookToBookCollection(userLibrary, book2);
-LibraryManager.showCurrentBookCollection(userLibrary, userLibraryDisplay);
+LibraryManager.showCurrentBookCollection(userLibrary, currentCollectionDisplay);
 log(Book.numberOfBooks);

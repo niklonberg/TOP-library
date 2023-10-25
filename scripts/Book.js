@@ -38,7 +38,7 @@ export default class Book {
       templateString += propertyConfig[key](value);
     }
 
-    const deleteBookBtn = `<button class="remove-book">Delete</button>`;
+    const deleteBookBtn = `<button class="remove-book-btn">Delete</button>`;
     templateString += deleteBookBtn;
 
     return templateString;
