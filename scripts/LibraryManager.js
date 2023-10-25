@@ -8,18 +8,24 @@ export default class Library {
     this.insertBookCollection(bookCollection, element);
   }
 
-  insertBookCollection(bookCollection, element) {
-    for (let i = 0; i < bookCollection.length; i++) {
-      element.insertAdjacentHTML(
-        "beforeend",
-        `<li data-id=${i}>
-          ${bookCollection[i].createHTMLElements()}
-        </li>`
-      );
-    }
+  insertBook(book, element) {
+    element.insertAdjacentHTML(
+      "beforeend",
+      `<li data-id=${book.bookID}>
+        ${book.createHTMLElements()}
+      </li>`
+    );
   }
 
-  insertLatestBook(bookCollection, element) {}
+  insertBookCollection(bookCollection, element) {
+    bookCollection.forEach((book) => {
+      this.insertBook(book, element);
+    });
+  }
+
+  insertLatestBook(bookCollection, element) {
+    this.insertBook(bookCollection.at(-1), element);
+  }
 
   addBookToBookCollection(bookCollection, book) {
     bookCollection.push(book);
