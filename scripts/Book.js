@@ -10,11 +10,15 @@ export default class Book {
   }
 
   createHTMLElements() {
-    const templateString = "";
+    let templateString = "";
 
-    for (const key in bookObj) {
-      if (bookObj[key] !== undefined) {
+    for (const key of this.filterUndefinedKeys()) {
+      if (key === "title") {
+        templateString += `<h3>${this[key]}</h3>`;
+      } else {
+        templateString += `<p>${this[key]}</p>`;
       }
     }
+    return templateString;
   }
 }

@@ -15,8 +15,7 @@ export default class Library {
     element.insertAdjacentHTML(
       "beforeend",
       `<li>
-        <h3>${book.title}</h3>
-        ${book.author}, ${book.pages}, ${book.finishedReading}
+        ${book.createHTMLElements()}
       </li>`
     );
   }
