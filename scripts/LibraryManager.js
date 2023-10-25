@@ -19,9 +19,7 @@ export default class Library {
     }
   }
 
-  /*   removeBook() {
-
-  } */
+  insertLatestBook(bookCollection, element) {}
 
   addBookToBookCollection(bookCollection, book) {
     bookCollection.push(book);

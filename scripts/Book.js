@@ -1,15 +1,18 @@
 export default class Book {
-  static numberOfBooks = 0; /* needed? */
+  static numberOfBooks = 0;
 
   constructor(bookObj) {
     for (const key in bookObj) {
       this[key] = bookObj[key];
     }
-    Book.numberOfBooks++; /* needed? */
+    this.bookID = Book.numberOfBooks;
+    Book.numberOfBooks++;
   }
 
-  filterUndefinedKeys() {
-    return Object.keys(this).filter((key) => this[key] !== undefined);
+  filterUnwantedKeys() {
+    return Object.keys(this).filter(
+      (key) => this[key] !== undefined && key !== "bookID"
+    );
   }
 
   createHTMLElements() {
@@ -30,7 +33,7 @@ export default class Book {
 
     let templateString = "";
 
-    for (const key of this.filterUndefinedKeys()) {
+    for (const key of this.filterUnwantedKeys()) {
       const value = this[key];
       templateString += propertyConfig[key](value);
     }
