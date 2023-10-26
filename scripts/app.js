@@ -39,6 +39,19 @@ currentCollectionDisplay.addEventListener("click", (event) => {
     log(userLibrary);
     parent.remove();
   }
+
+  if (event.target.classList.contains("toggle-readStatus-btn")) {
+    const parent = event.target.parentElement;
+    const readStatus = LibraryManager.toggleBookReadStatus(
+      userLibrary,
+      parent.dataset.id
+    );
+    if (!readStatus) {
+      event.target.textContent = "Not Read";
+    } else {
+      event.target.textContent = "Read";
+    }
+  }
 });
 
 bookForm.addEventListener("submit", (event) => {

@@ -27,13 +27,11 @@ export default class Book {
         if (!value) {
           buttonText = "Not Read";
         }
-        return `<button>${buttonText}</button>`;
+        return `<button class="toggle-readStatus-btn">${buttonText}</button>`;
       },
     };
 
     let templateString = "";
-
-    console.log("filtered keys: ", this.filterUnwantedKeys());
 
     for (const key of this.filterUnwantedKeys()) {
       const value = this[key];

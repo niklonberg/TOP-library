@@ -12,6 +12,18 @@ export default class Library {
     bookCollection.splice(dataID, 1);
   }
 
+  toggleBookReadStatus(bookCollection, dataID) {
+    let readStatus;
+    bookCollection.forEach((book) => {
+      if (book.bookID === Number.parseInt(dataID)) {
+        book.finishedReading = !book.finishedReading;
+        readStatus = book.finishedReading;
+      }
+    });
+
+    return readStatus;
+  }
+
   showCurrentBookCollection(bookCollection, element) {
     element.innerHTML = "";
     this.insertBookCollection(bookCollection, element);
