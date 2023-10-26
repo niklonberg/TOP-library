@@ -11,7 +11,7 @@ export default class Book {
 
   filterUnwantedKeys() {
     return Object.keys(this).filter(
-      (key) => this[key] !== undefined && key !== "bookID"
+      (key) => this[key] !== undefined && this[key] !== "" && key !== "bookID"
     );
   }
 
@@ -32,6 +32,8 @@ export default class Book {
     };
 
     let templateString = "";
+
+    console.log("filtered keys: ", this.filterUnwantedKeys());
 
     for (const key of this.filterUnwantedKeys()) {
       const value = this[key];
