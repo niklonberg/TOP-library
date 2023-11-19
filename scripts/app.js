@@ -22,7 +22,6 @@ const book2 = new Book({
 const currentCollectionDisplay = document.querySelector("#book-display");
 const bookModal = document.querySelector("#new-book-modal");
 const bookForm = document.querySelector("#book-form");
-const addBookBtn = document.querySelector("#add-book-btn");
 const closeBookModalBtn = document.querySelector("#close-book-modal");
 
 /* event listeners */
@@ -49,11 +48,14 @@ currentCollectionDisplay.addEventListener("click", (event) => {
       event.target.textContent = "Read";
     }
   }
+
+  if (event.target.id === "add-book-btn") bookModal.showModal();
 });
 
 bookForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
+  const addBookBtn = document.querySelector("#add-book-btn");
   addBookBtn.remove();
 
   const newBookObj = BookForm.formCreateBookObj(bookForm.elements);
@@ -68,8 +70,6 @@ bookForm.addEventListener("submit", (event) => {
   bookForm.reset();
   bookModal.close();
 });
-
-addBookBtn.addEventListener("click", () => bookModal.showModal());
 
 closeBookModalBtn.addEventListener("click", () => bookModal.close());
 
