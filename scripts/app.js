@@ -19,8 +19,6 @@ const book1 = new Book({
 const book2 = new Book({
   title: "Lord of the Rings",
   author: "Tolkien",
-  pages: 300,
-  language: "English",
   publishedDate: "10-01-1992",
   finishedReading: false,
 });
