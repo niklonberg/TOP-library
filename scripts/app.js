@@ -54,11 +54,14 @@ currentCollectionDisplay.addEventListener("click", (event) => {
 bookForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
+  addBookBtn.remove();
+
   const newBookObj = BookForm.formCreateBookObj(bookForm.elements);
   const newBook = new Book(newBookObj);
 
   LibraryManager.addBook(userLibrary, newBook);
   LibraryManager.insertLatestBookCard(userLibrary, currentCollectionDisplay);
+  LibraryManager.createAndAppendBookBtn(currentCollectionDisplay);
 
   log(newBook);
   log(userLibrary);
@@ -77,3 +80,5 @@ LibraryManager.addBook(userLibrary, book2);
 LibraryManager.addBook(userLibrary, book2);
 LibraryManager.addBook(userLibrary, book1);
 LibraryManager.showCurrentBookCollection(userLibrary, currentCollectionDisplay);
+
+log(userLibrary);

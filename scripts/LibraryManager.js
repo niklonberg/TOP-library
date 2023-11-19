@@ -1,6 +1,7 @@
 export default class Library {
   constructor() {
-    this.bookCollections = {};
+    /* add support for multiple collections later maybe*/
+    this.bookCollections = [];
   }
 
   addBook(bookCollection, book) {
@@ -10,6 +11,15 @@ export default class Library {
   deleteBook(bookCollection, dataID) {
     /* save deleted book so it can be undone? */
     bookCollection.splice(dataID, 1);
+  }
+
+  createAndAppendBookBtn(element) {
+    const li = document.createElement("li");
+    const btn = document.createElement("button");
+    btn.textContent = "Add book";
+    li.id = "add-book-btn";
+    li.appendChild(btn);
+    element.appendChild(li);
   }
 
   toggleBookReadStatus(bookCollection, dataID) {
@@ -25,7 +35,7 @@ export default class Library {
   }
 
   showCurrentBookCollection(bookCollection, element) {
-    element.innerHTML = "";
+    /* element.innerHTML = "" necessary? */
     this.insertBookCollection(bookCollection, element);
   }
 
