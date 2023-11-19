@@ -26,55 +26,50 @@
       <aside id="library-info">
         <p>test element</p>
       </aside>
-      <dialog id="new-book-modal">
-        <form action="" id="book-form">
-          <h2>Add new book</h2>
-          <label for="book-title">Title</label>
-          <input type="text" name="title" id="book-title" />
-          <label for="book-author">Author</label>
-          <input type="text" name="author" id="book-author" />
-          <label for="book-pages">Pagecount</label>
-          <input
-            type="number"
-            inputmode="numeric"
-            name="pages"
-            id="book-pages"
-          />
-          <label for="book-language">Language</label>
-          <input
-            type="text"
-            name="language"
-            id="book-language"
-            list="language-options"
-          />
-          <datalist id="language-options">
-            <option value="English"></option>
-            <option value="Spanish"></option>
-            <option value="French"></option>
-            <option value="German"></option>
-            <option value="Russian"></option>
-            <option value="Japanese"></option>
-            <option value="Chinese"></option>
-            <option value="Korean"></option>
-          </datalist>
-          <label for="book-publishedDate">Publishing date</label>
-          <input type="date" name="publishedDate" id="book-publishedDate" />
-          <label for="book-finishedReading"
-            >Have you finished reading the book?</label
-          >
-          <input
-            type="checkbox"
-            name="finishedReading"
-            id="book-finishedReading"
-            value="false"
-          />
-          <button id="close-book-modal" type="button" aria-label="Close Modal">
-            X
-          </button>
-          <button type="submit">Add book</button>
-        </form>
-      </dialog>
     </main>
+    <dialog id="new-book-modal">
+      <form action="" id="book-form">
+        <h2>Add new book</h2>
+        <label for="book-title">Title</label>
+        <input type="text" name="title" id="book-title" />
+        <label for="book-author">Author</label>
+        <input type="text" name="author" id="book-author" />
+        <label for="book-pages">Pagecount</label>
+        <input type="number" inputmode="numeric" name="pages" id="book-pages" />
+        <label for="book-language">Language</label>
+        <input
+          type="text"
+          name="language"
+          id="book-language"
+          list="language-options"
+        />
+        <datalist id="language-options">
+          <option value="English"></option>
+          <option value="Spanish"></option>
+          <option value="French"></option>
+          <option value="German"></option>
+          <option value="Russian"></option>
+          <option value="Japanese"></option>
+          <option value="Chinese"></option>
+          <option value="Korean"></option>
+        </datalist>
+        <label for="book-publishedDate">Publishing date</label>
+        <input type="date" name="publishedDate" id="book-publishedDate" />
+        <label for="book-finishedReading"
+          >Have you finished reading the book?</label
+        >
+        <input
+          type="checkbox"
+          name="finishedReading"
+          id="book-finishedReading"
+          value="false"
+        />
+        <button id="close-book-modal" type="button" aria-label="Close Modal">
+          X
+        </button>
+        <button type="submit">Add book</button>
+      </form>
+    </dialog>
     <script type="module" src="scripts/app.js"></script>
   </body>
 </html>

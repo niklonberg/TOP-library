@@ -81,5 +81,7 @@ closeBookModalBtn.addEventListener("click", () => {
 const userLibrary = [];
 LibraryManager.addBook(userLibrary, book1);
 LibraryManager.addBook(userLibrary, book2);
+LibraryManager.addBook(userLibrary, book2);
+LibraryManager.addBook(userLibrary, book1);
 LibraryManager.showCurrentBookCollection(userLibrary, currentCollectionDisplay);
 log(Book.numberOfBooks);
