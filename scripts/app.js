@@ -54,7 +54,7 @@ currentCollectionDisplay.addEventListener("click", (event) => {
     }
   }
 
-  if (event.target.id === "add-book-btn") bookModal.showModal();
+  if (event.target.id === "add-book-card") bookModal.showModal();
 });
 
 bookForm.addEventListener("submit", (event) => {

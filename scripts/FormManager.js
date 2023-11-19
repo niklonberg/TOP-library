@@ -20,7 +20,7 @@ export default class BookForm {
   }
 
   static removeAddBookCard() {
-    document.querySelector("#add-book-btn").remove();
+    document.querySelector("#add-book-card").remove();
   }
 
   static createAddBookCard(element) {
@@ -28,7 +28,7 @@ export default class BookForm {
     /* remove btn elements later when you style the li */
     const btn = document.createElement("button");
     btn.textContent = "Add book";
-    li.id = "add-book-btn";
+    li.id = "add-book-card";
     li.appendChild(btn);
     element.appendChild(li);
   }

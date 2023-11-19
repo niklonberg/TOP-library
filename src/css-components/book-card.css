@@ -1,0 +1,11 @@
+@layer component {
+  .book-card {
+    background-color: var(--tertiary);
+    list-style: none;
+  }
+
+  #add-book-card {
+    background-color: var(--tertiary);
+    list-style: none;
+  }
+}

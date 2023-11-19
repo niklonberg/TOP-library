@@ -39,7 +39,7 @@ export default class Library {
   insertBookCard(book, element) {
     element.insertAdjacentHTML(
       "beforeend",
-      `<li data-id=${book.bookID}>
+      `<li data-id=${book.bookID} class="book-card">
         ${book.createHTMLElements()}
       </li>`
     );
