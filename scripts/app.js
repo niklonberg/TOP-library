@@ -17,9 +17,6 @@ const book2 = new Book({
   publishedDate: "10-01-1992",
   finishedReading: false,
 });
-log(book1);
-log(book2);
-log(book1.filterUnwantedKeys());
 
 /* dom element references */
 const currentCollectionDisplay = document.querySelector("#book-display");
@@ -69,13 +66,9 @@ bookForm.addEventListener("submit", (event) => {
   bookModal.close();
 });
 
-addBookBtn.addEventListener("click", () => {
-  bookModal.showModal();
-});
+addBookBtn.addEventListener("click", () => bookModal.showModal());
 
-closeBookModalBtn.addEventListener("click", () => {
-  bookModal.close();
-});
+closeBookModalBtn.addEventListener("click", () => bookModal.close());
 
 /* library instantiation */
 const userLibrary = [];
@@ -84,4 +77,3 @@ LibraryManager.addBook(userLibrary, book2);
 LibraryManager.addBook(userLibrary, book2);
 LibraryManager.addBook(userLibrary, book1);
 LibraryManager.showCurrentBookCollection(userLibrary, currentCollectionDisplay);
-log(Book.numberOfBooks);
