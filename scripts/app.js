@@ -63,7 +63,7 @@ bookForm.addEventListener("submit", (event) => {
 
   LibraryManager.addBook(userLibrary, newBook);
   LibraryManager.insertLatestBookCard(userLibrary, currentCollectionDisplay);
-  LibraryManager.createAndAppendBookBtn(currentCollectionDisplay);
+  BookForm.createAndAppendBookBtn(currentCollectionDisplay);
 
   log(newBook);
   log(userLibrary);

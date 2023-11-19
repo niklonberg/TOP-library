@@ -13,15 +13,6 @@ export default class Library {
     bookCollection.splice(dataID, 1);
   }
 
-  createAndAppendBookBtn(element) {
-    const li = document.createElement("li");
-    const btn = document.createElement("button");
-    btn.textContent = "Add book";
-    li.id = "add-book-btn";
-    li.appendChild(btn);
-    element.appendChild(li);
-  }
-
   toggleBookReadStatus(bookCollection, dataID) {
     let readStatus;
     bookCollection.forEach((book) => {
@@ -35,7 +26,7 @@ export default class Library {
   }
 
   showCurrentBookCollection(bookCollection, element) {
-    /* element.innerHTML = "" necessary? */
+    /* could show the selected book collection if multiple collections */
     this.insertBookCollection(bookCollection, element);
   }
 
