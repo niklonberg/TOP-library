@@ -19,12 +19,13 @@ export default class BookForm {
     return bookObj;
   }
 
-  static removeAddBookBtn() {
+  static removeAddBookCard() {
     document.querySelector("#add-book-btn").remove();
   }
 
-  static createAddBookBtn(element) {
+  static createAddBookCard(element) {
     const li = document.createElement("li");
+    /* remove btn elements later when you style the li */
     const btn = document.createElement("button");
     btn.textContent = "Add book";
     li.id = "add-book-btn";

@@ -8,7 +8,14 @@ import BookForm from "./FormManager.js";
 /* class instantiation */
 const LibraryManager = new Library();
 
-const book1 = new Book({ title: "The Shining", author: "Stephen King" });
+const book1 = new Book({
+  title: "A Game Of Thrones",
+  author: "George R. R. Martin",
+  pages: 694,
+  language: "English",
+  publishedDate: "07-01 1996",
+  finishedReading: false,
+});
 const book2 = new Book({
   title: "Lord of the Rings",
   author: "Tolkien",
@@ -55,14 +62,14 @@ currentCollectionDisplay.addEventListener("click", (event) => {
 bookForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  BookForm.removeAddBookBtn();
+  BookForm.removeAddBookCard();
 
   const newBookObj = BookForm.formCreateBookObj(bookForm.elements);
   const newBook = new Book(newBookObj);
 
   LibraryManager.addBook(userLibrary, newBook);
   LibraryManager.insertLatestBookCard(userLibrary, currentCollectionDisplay);
-  BookForm.createAddBookBtn(currentCollectionDisplay);
+  BookForm.createAddBookCard(currentCollectionDisplay);
 
   log(newBook);
   log(userLibrary);
@@ -76,8 +83,6 @@ closeBookModalBtn.addEventListener("click", () => bookModal.close());
 const userLibrary = [];
 LibraryManager.addBook(userLibrary, book1);
 LibraryManager.addBook(userLibrary, book2);
-LibraryManager.addBook(userLibrary, book2);
-LibraryManager.addBook(userLibrary, book1);
 LibraryManager.showCurrentBookCollection(userLibrary, currentCollectionDisplay);
 
 log(userLibrary);
