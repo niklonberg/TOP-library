@@ -1,0 +1,6 @@
+@layer component {
+  #library-content {
+    display: grid;
+    /* grid-auto-flow: column; */
+  }
+}
