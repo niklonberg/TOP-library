@@ -1,3 +1,4 @@
 @layer base, component, page;
 
 @import url(./src/css-components/base.css);
+@import url(./src/css-components/header.css);
