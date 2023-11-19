@@ -19,7 +19,11 @@ export default class BookForm {
     return bookObj;
   }
 
-  static createAndAppendBookBtn(element) {
+  static removeAddBookBtn() {
+    document.querySelector("#add-book-btn").remove();
+  }
+
+  static createAddBookBtn(element) {
     const li = document.createElement("li");
     const btn = document.createElement("button");
     btn.textContent = "Add book";

@@ -55,15 +55,14 @@ currentCollectionDisplay.addEventListener("click", (event) => {
 bookForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const addBookBtn = document.querySelector("#add-book-btn");
-  addBookBtn.remove();
+  BookForm.removeAddBookBtn();
 
   const newBookObj = BookForm.formCreateBookObj(bookForm.elements);
   const newBook = new Book(newBookObj);
 
   LibraryManager.addBook(userLibrary, newBook);
   LibraryManager.insertLatestBookCard(userLibrary, currentCollectionDisplay);
-  BookForm.createAndAppendBookBtn(currentCollectionDisplay);
+  BookForm.createAddBookBtn(currentCollectionDisplay);
 
   log(newBook);
   log(userLibrary);
